@@ -1,0 +1,107 @@
+using System;
+
+static class RockPaperScissors
+{
+	static void Main()
+	{
+		
+		int com = 0;
+		int player = 0;
+		int totalscore = com + player;
+		
+		
+		while (totalscore < 3)
+		{
+	
+			Console.WriteLine("Choose an option...");
+			Console.WriteLine("1. Rock");
+			Console.WriteLine("2. Paper");
+			Console.WriteLine("3. Scissors");
+			
+	
+			int choice = int.Parse(Console.ReadLine());
+		
+			Random rnd = new Random();
+			int r = rnd.Next(1, 4);
+		
+			string a = "You chose Rock";
+			string b = "You chose Paper";
+			string c = "You chose Scissors";
+		
+			string coma = "Computer chose Rock";
+			string comb = "Computer chose Paper";
+			string comc = "Computer chose Scissors";
+
+		
+			if (choice == 1 && r == 2)
+			{
+				Console.WriteLine(comb);
+				Console.WriteLine(a);
+				Console.WriteLine("You lose!");
+				com++;
+				totalscore = com + player;
+			}
+			else if (choice == 1 && r == 3)
+			{
+				Console.WriteLine(comc);
+				Console.WriteLine(a);
+				Console.WriteLine("You win!");
+				player++;
+				totalscore = com + player;
+			}
+			else if (choice == 2 && r == 1)
+			{
+				Console.WriteLine(coma);
+				Console.WriteLine(b);
+				Console.WriteLine("You win!");
+				player++;
+				totalscore = com + player;
+			}
+			else if (choice == 2 && r == 3)
+			{
+				Console.WriteLine(comc);
+				Console.WriteLine(b);
+				Console.WriteLine("You lose!");
+				com++;
+				totalscore = com + player;
+			}
+			else if (choice == 3 && r == 1)
+			{
+				Console.WriteLine(coma);
+				Console.WriteLine(c);
+				Console.WriteLine("You lose!");
+				com++;
+				totalscore = com + player;
+			}
+			else if (choice == 3 && r == 2)
+			{
+				Console.WriteLine(comb);
+				Console.WriteLine(c);
+				Console.WriteLine("You win!");
+				player++;
+				totalscore = com + player;
+			}
+			
+			else
+			{
+				Console.WriteLine("It's a tie!");
+				totalscore = com + player;
+			}
+		Console.WriteLine("You: " + player + " Computer: " + com);
+		
+		
+		}
+			if (totalscore == 3)
+		{
+			if (player > com)
+			{
+				Console.WriteLine("You win the game!");
+			}
+			else 
+			{
+				Console.WriteLine("Computer wins the game!");
+			}
+		}	
+		
+	}
+}
